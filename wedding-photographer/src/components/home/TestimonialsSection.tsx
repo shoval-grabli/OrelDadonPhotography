@@ -19,7 +19,6 @@ export default function TestimonialsSection() {
     setCurrent(c => (c - 1 + total) % total)
   }, [total])
 
-  // Auto-advance via interval — reliable, independent of current state
   useEffect(() => {
     const id = setInterval(() => {
       if (!isPausedRef.current) {
@@ -33,13 +32,12 @@ export default function TestimonialsSection() {
 
   return (
     <section
-      className="relative pt-24 pb-36 md:pt-32 md:pb-48 bg-bg-section overflow-hidden"
-      onMouseEnter={() => { isPausedRef.current = true }}
-      onMouseLeave={() => { isPausedRef.current = false }}
+      className="relative pt-16 pb-20 md:pt-32 md:pb-40 bg-bg-section overflow-hidden"
     >
       <div className="max-w-6xl mx-auto px-6">
+
         {/* Title */}
-        <div className="mb-16 text-center">
+        <div className="mb-10 md:mb-16 text-center">
           <h2 className="font-display text-4xl md:text-5xl text-text-primary font-light">
             זוגות ממליצים
           </h2>
@@ -47,6 +45,7 @@ export default function TestimonialsSection() {
 
         {/* Carousel */}
         <div className="relative flex items-stretch gap-6 justify-center">
+
           {/* Prev arrow */}
           <button
             onClick={prev}
@@ -61,22 +60,50 @@ export default function TestimonialsSection() {
             {[0, 1, 2].map(offset => {
               const t = testimonials[getIndex(offset)]
               const isCenter = offset === 1
+
               return (
                 <div
                   key={getIndex(offset)}
-                  className={`bg-bg-main border border-border-soft p-8 flex flex-col gap-6 transition-opacity duration-500 ${
-                    isCenter ? 'opacity-100' : 'opacity-50 hidden md:flex'
-                  }`}
+                  className={[
+                    'relative bg-bg-main flex flex-col gap-5 overflow-hidden',
+                    'transition-all duration-300 ease-in-out',
+                    isCenter
+                      ? [
+                          'opacity-100 p-8',
+                          'border border-accent/30',
+                          'shadow-[0_6px_28px_rgba(78,67,61,0.10)]',
+                          'hover:scale-[1.015]',
+                          'hover:shadow-[0_10px_36px_rgba(78,67,61,0.15)]',
+                        ].join(' ')
+                      : 'opacity-40 hidden md:flex p-8 border border-border-soft shadow-[0_2px_10px_rgba(78,67,61,0.05)]',
+                  ].join(' ')}
                 >
-                  <span className="font-display text-5xl text-accent leading-none select-none">&ldquo;</span>
-                  <p className="font-sans text-text-primary font-light leading-relaxed text-sm flex-1">
+                  {/* Background decorative quote mark */}
+                  <span className="absolute -top-3 right-4 font-display text-[6.5rem] leading-none text-accent/[0.09] select-none pointer-events-none">
+                    &ldquo;
+                  </span>
+
+                  {/* Quote text */}
+                  <p className="relative font-sans text-text-secondary font-light leading-relaxed text-sm flex-1 pt-3">
                     {t.quote}
                   </p>
-                  <div className="border-t border-border-soft pt-5">
-                    <p className="font-sans font-medium text-text-primary text-sm">{t.names}</p>
-                    <p className="font-sans text-text-secondary text-xs mt-0.5">
-                      {t.year}{t.location ? ` · ${t.location}` : ''}
-                    </p>
+
+                  {/* Footer */}
+                  <div className="border-t border-border-soft pt-4 flex items-center gap-3">
+                    {/* Avatar */}
+                    <div className="w-9 h-9 rounded-full bg-bg-section border border-border-soft flex items-center justify-center shrink-0">
+                      <span className="font-sans text-[10px] font-semibold text-text-secondary tracking-wide">
+                        {t.initials}
+                      </span>
+                    </div>
+                    <div>
+                      <p className="font-sans font-semibold text-text-primary text-sm leading-tight">
+                        {t.names}
+                      </p>
+                      <p className="font-sans text-text-secondary text-xs mt-0.5">
+                        {t.year}{t.location ? ` · ${t.location}` : ''}
+                      </p>
+                    </div>
                   </div>
                 </div>
               )

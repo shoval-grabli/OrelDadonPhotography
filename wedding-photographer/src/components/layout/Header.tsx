@@ -44,7 +44,7 @@ export default function Header() {
                 key={link.href}
                 href={link.href}
                 className={cn(
-                  'font-sans text-sm transition-colors duration-200 tracking-wide',
+                  'link-underline font-sans text-sm transition-colors duration-200 tracking-wide',
                   pathname === link.href
                     ? 'text-button-soft'
                     : 'text-text-secondary hover:text-text-primary'
@@ -66,7 +66,7 @@ export default function Header() {
           {/* Actions — שמאל */}
           <div className="hidden md:flex items-center gap-5 ms-auto">
             <a
-              href="https://www.instagram.com/shira.levy.photography"
+              href="https://www.instagram.com/orel.dadon.photography?utm_source=ig_web_button_share_sheet&igsh=ZDNlZDc0MzIxNw=="
               target="_blank"
               rel="noopener noreferrer"
               className="text-text-secondary hover:text-button-soft transition-colors"

@@ -69,7 +69,7 @@ export default function MobileMenu({ isOpen, onClose }: MobileMenuProps) {
             בדיקת זמינות
           </Button>
           <a
-            href="https://www.instagram.com/shira.levy.photography"
+            href="https://www.instagram.com/orel.dadon.photography?utm_source=ig_web_button_share_sheet&igsh=ZDNlZDc0MzIxNw=="
             target="_blank"
             rel="noopener noreferrer"
             className="flex items-center gap-2 text-text-secondary hover:text-button-soft transition-colors text-sm"

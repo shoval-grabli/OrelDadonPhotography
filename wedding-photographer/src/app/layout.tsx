@@ -2,6 +2,7 @@ import type { Metadata } from 'next'
 import './globals.css'
 import Header from '@/components/layout/Header'
 import Footer from '@/components/layout/Footer'
+import FloatingWhatsApp from '@/components/layout/FloatingWhatsApp'
 
 export const metadata: Metadata = {
   title: {
@@ -42,7 +43,7 @@ export default function RootLayout({
               },
               priceRange: '₪₪₪',
               telephone: '+972-50-123-4567',
-              sameAs: ['https://www.instagram.com/shira.levy.photography'],
+              sameAs: ['https://www.instagram.com/orel.dadon.photography'],
             }),
           }}
         />
@@ -51,6 +52,7 @@ export default function RootLayout({
         <Header />
         <main>{children}</main>
         <Footer />
+        <FloatingWhatsApp />
       </body>
     </html>
   )

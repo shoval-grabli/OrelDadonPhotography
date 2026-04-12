@@ -14,16 +14,12 @@ export default function JournalPage() {
   return (
     <>
       {/* Header */}
-      <section className="pt-32 pb-16 md:pt-44 md:pb-20 bg-bg-section">
+      <section className="pt-32 pb-16 md:pt-44 md:pb-20 bg-bg-main">
         <div className="max-w-4xl mx-auto px-6 text-center">
           <AnimatedSection>
-            <span className="text-xs tracking-widest uppercase text-text-secondary font-sans">יומן</span>
-            <h1 className="font-display text-5xl md:text-6xl text-text-primary leading-tight font-light mt-4 mb-4">
-              הבלוג
-            </h1>
-            <p className="font-sans text-text-secondary font-light text-base max-w-md mx-auto">
+            <h1 className="font-display text-5xl md:text-6xl text-text-primary leading-tight font-light mb-4">
               השראה, טיפים, וסיפורי חתונות אמיתיים
-            </p>
+            </h1>
           </AnimatedSection>
         </div>
       </section>

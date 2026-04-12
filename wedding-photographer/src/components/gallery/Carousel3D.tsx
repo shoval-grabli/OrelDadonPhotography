@@ -10,15 +10,15 @@ import Lightbox from './Lightbox'
 const ROTATE_SPEED = 20 // degrees per second (full rotation = 18s)
 
 const RADIUS = {
-  mobile: 190,
-  tablet: 320,
-  desktop: 490,
+  mobile: 140,
+  tablet: 230,
+  desktop: 355,
 }
 
 const CARD = {
-  mobile:  { w: 150, h: 210 },
-  tablet:  { w: 210, h: 290 },
-  desktop: { w: 270, h: 370 },
+  mobile:  { w: 110, h: 151 },
+  tablet:  { w: 150, h: 206 },
+  desktop: { w: 195, h: 268 },
 }
 
 function getBreakpoint() {

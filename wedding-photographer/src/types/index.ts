@@ -30,6 +30,7 @@ export interface Testimonial {
   names: string
   year: number
   location?: string
+  initials: string
 }
 
 export interface ProcessStep {

@@ -6,7 +6,7 @@ import { cn } from '@/lib/utils'
 interface AnimatedSectionProps {
   children: React.ReactNode
   className?: string
-  delay?: 0 | 100 | 200 | 300 | 400
+  delay?: 0 | 100 | 200 | 300 | 400 | 500
 }
 
 export default function AnimatedSection({ children, className, delay = 0 }: AnimatedSectionProps) {
@@ -24,28 +24,22 @@ export default function AnimatedSection({ children, className, delay = 0 }: Anim
           observer.unobserve(el)
         }
       },
-      { threshold: 0.1 }
+      { threshold: 0.08, rootMargin: '0px 0px -32px 0px' }
     )
 
     observer.observe(el)
     return () => observer.disconnect()
   }, [])
 
-  const delayClass = {
-    0: '',
-    100: 'delay-100',
-    200: 'delay-200',
-    300: 'delay-300',
-    400: 'delay-[400ms]',
-  }[delay]
+  const delayClass = delay > 0 ? `anim-delay-${delay}` : ''
 
   return (
     <div
       ref={ref}
       className={cn(
-        'transition-all duration-700 ease-out',
+        'anim-fade',
         delayClass,
-        isVisible ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-6',
+        isVisible && 'is-visible',
         className
       )}
     >

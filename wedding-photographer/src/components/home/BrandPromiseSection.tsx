@@ -29,7 +29,7 @@ export default function BrandPromiseSection() {
   return (
     <section className="py-24 md:py-32 bg-bg-main">
       <div className="max-w-6xl mx-auto px-6">
-        <div className="grid grid-cols-1 md:grid-cols-2 gap-16 items-start">
+        <div className="grid grid-cols-1 md:grid-cols-2 gap-10 md:gap-16 items-start">
           {/* Left — Title */}
           <AnimatedSection className="md:sticky md:top-32">
             <span className="text-xs tracking-widest uppercase text-text-secondary font-sans">הבטחת המותג</span>
@@ -47,7 +47,7 @@ export default function BrandPromiseSection() {
           {/* Right — Values */}
           <div className="flex flex-col gap-8">
             {values.map((value, i) => (
-              <AnimatedSection key={i} delay={i % 3 === 0 ? 0 : i % 3 === 1 ? 100 : 200}>
+              <AnimatedSection key={i} delay={(i * 100) as 0 | 100 | 200 | 300 | 400}>
                 <div className="flex gap-5 items-start group">
                   <div className="mt-1 w-8 h-8 rounded-full bg-bg-section border border-border-soft flex items-center justify-center shrink-0 text-xs text-text-secondary font-sans group-hover:border-button-soft transition-colors">
                     {String(i + 1).padStart(2, '0')}

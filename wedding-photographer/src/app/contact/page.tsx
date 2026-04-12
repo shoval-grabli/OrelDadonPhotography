@@ -17,8 +17,7 @@ export default function ContactPage() {
       <section className="pt-32 pb-16 md:pt-44 md:pb-20 bg-bg-section">
         <div className="max-w-2xl mx-auto px-6 text-center">
           <AnimatedSection>
-            <span className="text-xs tracking-widest uppercase text-text-secondary font-sans">נוצרים קשר</span>
-            <h1 className="font-display text-5xl md:text-6xl text-text-primary leading-tight font-light mt-4 mb-4">
+            <h1 className="font-display text-5xl md:text-6xl text-text-primary leading-tight font-light mb-4">
               בואו נדבר
             </h1>
             <p className="font-sans text-text-secondary font-light text-base leading-relaxed max-w-md mx-auto">
@@ -38,27 +37,27 @@ export default function ContactPage() {
                 <h2 className="font-display text-2xl text-text-primary font-light mb-6">פרטי קשר</h2>
                 <div className="flex flex-col gap-5">
                   <a
-                    href="tel:+972501234567"
+                    href="tel:+972508151990"
                     className="flex items-center gap-3 text-sm text-text-secondary hover:text-text-primary transition-colors font-sans group"
                   >
                     <Phone size={16} className="text-accent group-hover:text-button-soft transition-colors" />
-                    050-123-4567
+                    050-815-1990
                   </a>
                   <a
-                    href="mailto:shira@example.com"
+                    href="mailto:oreldadon13@gmail.com"
                     className="flex items-center gap-3 text-sm text-text-secondary hover:text-text-primary transition-colors font-sans group"
                   >
                     <Mail size={16} className="text-accent group-hover:text-button-soft transition-colors" />
-                    shira@example.com
+                    oreldadon13@gmail.com
                   </a>
                   <a
-                    href="https://www.instagram.com/shira.levy.photography"
+                    href="https://www.instagram.com/orel.dadon.photography?utm_source=ig_web_button_share_sheet&igsh=ZDNlZDc0MzIxNw=="
                     target="_blank"
                     rel="noopener noreferrer"
                     className="flex items-center gap-3 text-sm text-text-secondary hover:text-button-soft transition-colors font-sans group"
                   >
                     <Instagram size={16} className="text-accent group-hover:text-button-soft transition-colors" />
-                    @shira.levy.photography
+                    orel.dadon.photography
                   </a>
                 </div>
               </div>

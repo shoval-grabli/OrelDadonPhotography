@@ -25,7 +25,7 @@ export default function GalleryGrid({ images }: GalleryGridProps) {
   return (
     <>
       {/* Filter */}
-      <div className="mb-12">
+      <div className="mb-8 md:mb-12">
         <GalleryFilter active={activeCategory} onChange={setActiveCategory} />
       </div>
 

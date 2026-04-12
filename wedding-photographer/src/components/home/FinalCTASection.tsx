@@ -6,7 +6,7 @@ import WaveDivider from '@/components/ui/WaveDivider'
 
 export default function FinalCTASection() {
   return (
-    <section className="relative pt-40 pb-28 md:pt-52 md:pb-40 overflow-hidden">
+    <section className="relative pt-20 pb-16 md:pt-40 md:pb-28 lg:pt-52 lg:pb-40 overflow-hidden">
       {/* Background */}
       <div className="absolute inset-0">
         <Image
@@ -24,20 +24,16 @@ export default function FinalCTASection() {
 
       {/* Content */}
       <AnimatedSection className="relative z-10 max-w-2xl mx-auto px-6 text-center">
-        <span className="text-xs tracking-widest uppercase text-white/60 font-sans">נוצרים קשר</span>
-        <h2 className="font-display text-4xl md:text-5xl text-white leading-snug font-light mt-4 mb-2">
+        <h2 className="font-display text-4xl md:text-5xl text-white leading-snug font-light mb-2">
           מוכנים להתחיל?
         </h2>
         <Divider className="bg-white/30 mx-auto my-6" />
-        <p className="font-sans text-white/80 font-light text-base leading-relaxed mb-10">
-          התאריכים שלי מתמלאים מהר. פנו אליי עוד היום לבדוק אם התאריך שלכם פנוי, ונתחיל לדבר על החתונה שחלמתם עליה.
-        </p>
         <div className="flex flex-col sm:flex-row gap-4 justify-center">
           <Button href="/contact" size="lg" className="bg-white/90 text-text-primary border-white/90 hover:bg-white hover:border-white">
             לבדיקת זמינות
           </Button>
           <a
-            href="https://wa.me/972501234567?text=היי אוראל, אשמח לבדוק זמינות לחתונה שלנו"
+            href="https://wa.me/972508151990?text=היי אוראל, אשמח לבדוק זמינות לחתונה שלנו"
             target="_blank"
             rel="noopener noreferrer"
             className="inline-flex items-center justify-center gap-2 font-sans font-medium text-sm px-8 py-4 border border-white/40 text-white hover:border-white hover:bg-white/10 transition-all duration-300 tracking-wider"

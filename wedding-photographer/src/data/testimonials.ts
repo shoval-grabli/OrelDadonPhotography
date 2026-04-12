@@ -7,6 +7,7 @@ export const testimonials: Testimonial[] = [
     names: 'נועה ויונתן',
     year: 2024,
     location: 'תל אביב',
+    initials: 'נ״י',
   },
   {
     id: '2',
@@ -14,6 +15,7 @@ export const testimonials: Testimonial[] = [
     names: 'מיכל ואדם',
     year: 2024,
     location: 'הרצליה',
+    initials: 'מ״א',
   },
   {
     id: '3',
@@ -21,6 +23,7 @@ export const testimonials: Testimonial[] = [
     names: 'לימור ודניאל',
     year: 2023,
     location: 'ירושלים',
+    initials: 'ל״ד',
   },
   {
     id: '4',
@@ -28,6 +31,7 @@ export const testimonials: Testimonial[] = [
     names: 'שני ועמית',
     year: 2023,
     location: 'נתניה',
+    initials: 'ש״ע',
   },
   {
     id: '5',
@@ -35,6 +39,7 @@ export const testimonials: Testimonial[] = [
     names: 'הילה ורן',
     year: 2024,
     location: 'כפר סבא',
+    initials: 'ה״ר',
   },
   {
     id: '6',
@@ -42,5 +47,6 @@ export const testimonials: Testimonial[] = [
     names: 'תמר ואלכס',
     year: 2022,
     location: 'רמת גן',
+    initials: 'ת״א',
   },
 ]

@@ -1,4 +1,4 @@
-@import url('https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,500;0,700;1,400&family=Montserrat:wght@300;400;500;600;700&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,500;0,600;1,300;1,400;1,500&family=Heebo:wght@300;400;500;600&display=swap');
 
 @tailwind base;
 @tailwind components;
@@ -20,15 +20,36 @@ html {
 }
 
 body {
-  font-family: 'Montserrat', sans-serif;
+  font-family: 'Heebo', sans-serif;
   color: var(--text-primary);
   background-color: var(--bg-main);
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
+  line-height: 1.75;
+  font-weight: 300;
 }
 
 p, li, span {
   text-align: inherit;
+}
+
+/* Heading base — elegant hierarchy */
+h1, h2, h3, h4 {
+  font-family: 'Cormorant Garamond', serif;
+  line-height: 1.2;
+  letter-spacing: 0.01em;
+  font-feature-settings: "kern" 1, "liga" 1;
+}
+
+/* Body text refinements */
+p {
+  line-height: 1.8;
+}
+
+/* Uppercase labels — generous spacing */
+.tracking-widest,
+[class*="tracking-widest"] {
+  letter-spacing: 0.22em;
 }
 
 body.lightbox-open {
@@ -70,17 +91,43 @@ body.lightbox-open {
   margin-bottom: 12px;
 }
 
-/* Animated section */
-.fade-in-section {
-  opacity: 0;
-  transform: translateY(24px);
-  transition: opacity 0.7s ease, transform 0.7s ease;
+/* Hero entrance animation */
+@keyframes heroIn {
+  from {
+    opacity: 0;
+    transform: translateY(18px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
 }
 
-.fade-in-section.is-visible {
+.hero-fade {
+  animation: heroIn 1s cubic-bezier(0.25, 0.46, 0.45, 0.94) both;
+}
+
+/* Premium scroll animation system */
+.anim-fade {
+  opacity: 0;
+  transform: translateY(16px);
+  transition:
+    opacity 0.8s cubic-bezier(0.25, 0.46, 0.45, 0.94),
+    transform 0.8s cubic-bezier(0.25, 0.46, 0.45, 0.94);
+  will-change: opacity, transform;
+}
+
+.anim-fade.is-visible {
   opacity: 1;
   transform: translateY(0);
+  will-change: auto;
 }
+
+.anim-delay-100 { transition-delay: 100ms; }
+.anim-delay-200 { transition-delay: 200ms; }
+.anim-delay-300 { transition-delay: 300ms; }
+.anim-delay-400 { transition-delay: 400ms; }
+.anim-delay-500 { transition-delay: 500ms; }
 
 /* Process step connector */
 .process-connector::after {
@@ -97,4 +144,22 @@ body.lightbox-open {
 ::selection {
   background: var(--accent);
   color: white;
+}
+
+/* Animated underline for nav & text links (RTL-aware) */
+.link-underline {
+  position: relative;
+}
+.link-underline::after {
+  content: '';
+  position: absolute;
+  bottom: -2px;
+  right: 0;
+  width: 0;
+  height: 1px;
+  background: currentColor;
+  transition: width 0.3s ease;
+}
+.link-underline:hover::after {
+  width: 100%;
 }

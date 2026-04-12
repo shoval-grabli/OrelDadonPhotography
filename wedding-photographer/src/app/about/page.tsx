@@ -1,8 +1,6 @@
 import type { Metadata } from 'next'
 import Image from 'next/image'
 import AnimatedSection from '@/components/ui/AnimatedSection'
-import SectionTitle from '@/components/ui/SectionTitle'
-import Button from '@/components/ui/Button'
 import Divider from '@/components/ui/Divider'
 
 export const metadata: Metadata = {
@@ -57,15 +55,6 @@ export default function AboutPage() {
                   sizes="(max-width: 768px) 100vw, 50vw"
                 />
               </div>
-              <div className="relative aspect-[4/3] ms-12">
-                <Image
-                  src="https://images.unsplash.com/photo-1506905925346-21bda4d32df4?w=800&q=80&fit=crop"
-                  alt="אוראל דדון בעבודה"
-                  fill
-                  className="object-cover"
-                  sizes="(max-width: 768px) 100vw, 40vw"
-                />
-              </div>
             </AnimatedSection>
 
             {/* Story text */}
@@ -97,7 +86,7 @@ export default function AboutPage() {
                   { number: '6-8', label: 'שבועות עד מסירה' },
                 ].map((stat) => (
                   <div key={stat.label}>
-                    <p className="font-display text-3xl text-text-primary">{stat.number}</p>
+                    <p className="font-display text-2xl md:text-3xl text-text-primary">{stat.number}</p>
                     <p className="font-sans text-text-secondary text-xs font-light mt-1">{stat.label}</p>
                   </div>
                 ))}
@@ -110,12 +99,10 @@ export default function AboutPage() {
       {/* Philosophy */}
       <section className="py-24 md:py-32 bg-bg-section">
         <div className="max-w-6xl mx-auto px-6">
-          <AnimatedSection className="mb-16">
-            <SectionTitle
-              label="גישה"
-              title="הפילוסופיה שלי"
-              subtitle="מאמין בצילום דוקומנטרי — עם עין אמנותית. הרגעים הכי יפים הם אלו שקורים בין הפריימים."
-            />
+          <AnimatedSection className="mb-16 text-center">
+            <h2 className="font-display text-4xl md:text-5xl text-text-primary font-light">
+              הגישה שלי
+            </h2>
           </AnimatedSection>
 
           <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
@@ -132,46 +119,6 @@ export default function AboutPage() {
         </div>
       </section>
 
-      {/* Approach */}
-      <section className="py-24 md:py-32 bg-bg-main">
-        <div className="max-w-4xl mx-auto px-6 text-center">
-          <AnimatedSection>
-            <SectionTitle
-              label="יום החתונה"
-              title="הגישה שלי ליום הגדול"
-            />
-            <div className="mt-10 flex flex-col gap-6 text-start max-w-2xl mx-auto">
-              {[
-                'מגיע שעה לפני הטקס — לתפוס את האווירה, את האנשים, את הפרטים.',
-                'לא מנחה, לא מכוון. פשוט שם עם עיניים פתוחות.',
-                'מצלם את הכלה ואת החתן בנפרד ובמשותף — בקצב שמרגיש טבעי.',
-                'נוכח לכל הרגע, גם בין הטקס למסיבה.',
-                'יודע להיות בלתי נראה ובמקום הנכון בו-זמנית.',
-              ].map((item, i) => (
-                <div key={i} className="flex items-start gap-4">
-                  <span className="text-accent text-sm mt-0.5 shrink-0">✦</span>
-                  <p className="font-sans text-text-secondary font-light leading-relaxed text-base">{item}</p>
-                </div>
-              ))}
-            </div>
-          </AnimatedSection>
-        </div>
-      </section>
-
-      {/* CTA */}
-      <section className="py-20 bg-bg-section border-t border-border-soft">
-        <AnimatedSection className="text-center px-6">
-          <h2 className="font-display text-3xl text-text-primary font-light mb-4">
-            בואו נדבר
-          </h2>
-          <p className="font-sans text-text-secondary font-light text-base mb-8 max-w-md mx-auto">
-            שלחו לי הודעה ונבדוק יחד אם התאריך שלכם פנוי.
-          </p>
-          <Button href="/contact" size="lg">
-            לבדיקת זמינות
-          </Button>
-        </AnimatedSection>
-      </section>
     </>
   )
 }

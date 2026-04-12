@@ -20,7 +20,7 @@ export default function ProcessSection() {
           {processSteps.map((step, i) => (
             <AnimatedSection
               key={step.number}
-              delay={i % 4 === 0 ? 0 : i % 4 === 1 ? 100 : i % 4 === 2 ? 200 : 300}
+              delay={(i * 100) as 0 | 100 | 200 | 300}
             >
               <div className="relative flex flex-col items-center text-center md:items-start md:text-start gap-4">
                 {/* Number */}

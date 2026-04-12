@@ -23,13 +23,13 @@ export default function Button({
   disabled,
 }: ButtonProps) {
   const base =
-    'inline-flex items-center justify-center font-sans font-medium tracking-wider transition-all duration-300 focus:outline-none focus-visible:ring-2 focus-visible:ring-button-soft/50'
+    'inline-flex items-center justify-center font-sans font-medium tracking-wider transition-all duration-300 focus:outline-none focus-visible:ring-2 focus-visible:ring-button-soft/50 hover:-translate-y-px active:translate-y-0'
 
   const variants = {
     primary:
-      'bg-button-soft text-white hover:bg-[#967d6d] border border-button-soft hover:border-[#967d6d]',
+      'bg-button-soft text-white hover:bg-[#967d6d] border border-button-soft hover:border-[#967d6d] hover:shadow-[0_4px_14px_rgba(168,146,130,0.35)]',
     secondary:
-      'bg-transparent text-text-primary border border-border-soft hover:border-button-soft hover:text-button-soft',
+      'bg-transparent text-text-primary border border-border-soft hover:border-button-soft hover:text-button-soft hover:shadow-[0_2px_8px_rgba(168,146,130,0.18)]',
     ghost:
       'bg-transparent text-text-secondary hover:text-button-soft underline underline-offset-4 decoration-border-soft hover:decoration-button-soft',
   }
