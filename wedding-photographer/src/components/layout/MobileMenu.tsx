@@ -45,7 +45,7 @@ export default function MobileMenu({ isOpen, onClose }: MobileMenuProps) {
         }`}
       >
         <div className="flex items-center justify-between p-6 border-b border-border-soft">
-          <span className="font-display text-lg text-text-primary">אוראל דדון</span>
+          <span className="font-display text-lg text-text-primary">OREL DADON PHOTOGRAPHY</span>
           <button onClick={onClose} className="text-text-secondary hover:text-text-primary transition-colors">
             <X size={20} />
           </button>

@@ -1,32 +1,28 @@
 import AnimatedSection from '@/components/ui/AnimatedSection'
-import SectionTitle from '@/components/ui/SectionTitle'
+import WaveDivider from '@/components/ui/WaveDivider'
 import { processSteps } from '@/data/process'
 
 export default function ProcessSection() {
   return (
-    <section className="py-24 md:py-32 bg-bg-section">
+    <section className="relative pt-24 pb-32 md:pt-32 md:pb-44 bg-bg-main">
       <div className="max-w-6xl mx-auto px-6">
         <AnimatedSection className="mb-16">
-          <SectionTitle
-            label="התהליך"
-            title="איך עובד התהליך"
-            subtitle="פשוט, ברור, ונעים — מהשיחה הראשונה ועד הגלריה המוכנה."
-          />
+          <h2 className="font-display text-4xl md:text-5xl text-text-primary font-light">
+            איך עובד התהליך
+          </h2>
         </AnimatedSection>
 
         {/* Steps */}
-        <div className="grid grid-cols-1 md:grid-cols-4 gap-8 md:gap-6">
+        <div className="relative grid grid-cols-1 md:grid-cols-4 gap-8 md:gap-6">
+          {/* Single connector line behind all circles */}
+          <div className="hidden md:block absolute top-5 inset-x-0 h-px bg-border-soft" />
+
           {processSteps.map((step, i) => (
             <AnimatedSection
               key={step.number}
               delay={i % 4 === 0 ? 0 : i % 4 === 1 ? 100 : i % 4 === 2 ? 200 : 300}
             >
               <div className="relative flex flex-col items-center text-center md:items-start md:text-start gap-4">
-                {/* Connector line (desktop only) */}
-                {i < processSteps.length - 1 && (
-                  <div className="hidden md:block absolute top-5 start-full w-full h-px bg-border-soft -translate-y-px" />
-                )}
-
                 {/* Number */}
                 <div className="relative z-10 w-10 h-10 rounded-full bg-bg-main border border-border-soft flex items-center justify-center text-xs text-text-secondary font-sans shrink-0">
                   {String(step.number).padStart(2, '0')}
@@ -42,6 +38,7 @@ export default function ProcessSection() {
           ))}
         </div>
       </div>
+      <WaveDivider fill="#EDE3D7" />
     </section>
   )
 }

@@ -31,25 +31,13 @@ export default function Header() {
     <>
       <header
         className={cn(
-          'fixed top-0 inset-x-0 z-30 transition-all duration-300',
-          scrolled
-            ? 'bg-bg-main/95 backdrop-blur-md shadow-sm py-3'
-            : 'bg-transparent py-5'
+          'fixed top-0 inset-x-0 z-30 transition-all duration-300 bg-bg-main/90 backdrop-blur-md border-b border-border-soft',
+          scrolled ? 'py-3 shadow-sm' : 'py-5'
         )}
       >
         <div className="max-w-7xl mx-auto px-6 flex items-center justify-between gap-8">
-          {/* Logo */}
-          <Link
-            href="/"
-            className={cn(
-              'font-display text-xl tracking-wide shrink-0 transition-colors duration-300',
-              scrolled ? 'text-text-primary' : 'text-white'
-            )}
-          >
-            אוראל דדון
-          </Link>
 
-          {/* Desktop Nav */}
+          {/* Desktop Nav — ימין */}
           <nav className="hidden md:flex items-center gap-7">
             {navLinks.map(link => (
               <Link
@@ -57,13 +45,9 @@ export default function Header() {
                 href={link.href}
                 className={cn(
                   'font-sans text-sm transition-colors duration-200 tracking-wide',
-                  scrolled
-                    ? pathname === link.href
-                      ? 'text-button-soft'
-                      : 'text-text-secondary hover:text-text-primary'
-                    : pathname === link.href
-                      ? 'text-white'
-                      : 'text-white/70 hover:text-white'
+                  pathname === link.href
+                    ? 'text-button-soft'
+                    : 'text-text-secondary hover:text-text-primary'
                 )}
               >
                 {link.label}
@@ -71,36 +55,33 @@ export default function Header() {
             ))}
           </nav>
 
-          {/* Right side actions */}
-          <div className="hidden md:flex items-center gap-5">
+          {/* Logo — מרכז */}
+          <Link
+            href="/"
+            className="font-display text-xl tracking-wide shrink-0 text-text-primary absolute left-1/2 -translate-x-1/2"
+          >
+            OREL DADON PHOTOGRAPHY
+          </Link>
+
+          {/* Actions — שמאל */}
+          <div className="hidden md:flex items-center gap-5 ms-auto">
             <a
               href="https://www.instagram.com/shira.levy.photography"
               target="_blank"
               rel="noopener noreferrer"
-              className={cn(
-                'transition-colors hover:text-button-soft',
-                scrolled ? 'text-text-secondary' : 'text-white/70 hover:text-white'
-              )}
+              className="text-text-secondary hover:text-button-soft transition-colors"
               aria-label="אינסטגרם"
             >
               <Instagram size={18} />
             </a>
-            <Button
-              href="/contact"
-              variant="secondary"
-              size="sm"
-              className={!scrolled ? 'border-white/60 text-white hover:border-white hover:text-white' : ''}
-            >
+            <Button href="/contact" variant="secondary" size="sm">
               בדיקת זמינות
             </Button>
           </div>
 
           {/* Mobile hamburger */}
           <button
-            className={cn(
-              'md:hidden transition-colors hover:text-button-soft',
-              scrolled ? 'text-text-primary' : 'text-white'
-            )}
+            className="md:hidden text-text-primary hover:text-button-soft transition-colors ms-auto"
             onClick={() => setMobileOpen(true)}
             aria-label="פתח תפריט"
           >

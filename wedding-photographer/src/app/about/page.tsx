@@ -7,7 +7,7 @@ import Divider from '@/components/ui/Divider'
 
 export const metadata: Metadata = {
   title: 'אודות',
-  description: 'הסיפור שמאחורי העדשה — אוראל דדון, צלמת חתונות פרימיום בתל אביב.',
+  description: 'הסיפור שמאחורי העדשה — אוראל דדון, צלם חתונות פרימיום בתל אביב.',
 }
 
 const philosophy = [
@@ -17,7 +17,7 @@ const philosophy = [
   },
   {
     title: 'הנוכחות השקטה',
-    body: 'ביום החתונה שלכם אני כמעט בלתי נראית. כך האורחים מתנהגים טבעי, והרגעים קורים בלי מאמץ.',
+    body: 'ביום החתונה שלכם אני כמעט בלתי נראה. כך האורחים מתנהגים טבעי, והרגעים קורים בלי מאמץ.',
   },
   {
     title: 'עריכה שמחזקת, לא מכסה',
@@ -50,7 +50,7 @@ export default function AboutPage() {
             <AnimatedSection className="flex flex-col gap-4">
               <div className="relative aspect-[3/4]">
                 <Image
-                  src="https://images.unsplash.com/photo-1494790108755-2616b612b786?w=800&q=80&fit=crop"
+                  src="/images/about/portrait.jpg"
                   alt="אוראל דדון"
                   fill
                   className="object-cover"
@@ -82,7 +82,7 @@ export default function AboutPage() {
                     החתונה הראשונה שצילמתי שינתה אותי. הבנתי שזה לא עניין של אור או קומפוזיציה — זה עניין של לחיות את הרגע עם האנשים שבפניים.
                   </p>
                   <p className="font-sans text-text-secondary font-light leading-relaxed text-base">
-                    מאז 2018 אני מצלמת חתונות בתל אביב והסביבה. כל חתונה מלמדת אותי משהו חדש, וכל זוג מזכיר לי מחדש למה אני עושה את זה.
+                    מאז 2018 אני מצלם חתונות בתל אביב והסביבה. כל חתונה מלמדת אותי משהו חדש, וכל זוג מזכיר לי מחדש למה אני עושה את זה.
                   </p>
                 </div>
               </div>
@@ -114,7 +114,7 @@ export default function AboutPage() {
             <SectionTitle
               label="גישה"
               title="הפילוסופיה שלי"
-              subtitle="מאמינה בצילום דוקומנטרי — עם עין אמנותית. הרגעים הכי יפים הם אלו שקורים בין הפריימים."
+              subtitle="מאמין בצילום דוקומנטרי — עם עין אמנותית. הרגעים הכי יפים הם אלו שקורים בין הפריימים."
             />
           </AnimatedSection>
 
@@ -142,11 +142,11 @@ export default function AboutPage() {
             />
             <div className="mt-10 flex flex-col gap-6 text-start max-w-2xl mx-auto">
               {[
-                'מגיעה שעה לפני הטקס — לתפוס את האווירה, את האנשים, את הפרטים.',
-                'לא מנחה, לא מכוונת. פשוט שם עם עיניים פתוחות.',
-                'צולמת את הכלה ואת החתן בנפרד ובמשותף — בקצב שמרגיש טבעי.',
-                'נוכחת לכל הרגע, גם בין הטקס למסיבה.',
-                'יודעת להיות בלתי נראית ובמקום הנכון בו-זמנית.',
+                'מגיע שעה לפני הטקס — לתפוס את האווירה, את האנשים, את הפרטים.',
+                'לא מנחה, לא מכוון. פשוט שם עם עיניים פתוחות.',
+                'מצלם את הכלה ואת החתן בנפרד ובמשותף — בקצב שמרגיש טבעי.',
+                'נוכח לכל הרגע, גם בין הטקס למסיבה.',
+                'יודע להיות בלתי נראה ובמקום הנכון בו-זמנית.',
               ].map((item, i) => (
                 <div key={i} className="flex items-start gap-4">
                   <span className="text-accent text-sm mt-0.5 shrink-0">✦</span>

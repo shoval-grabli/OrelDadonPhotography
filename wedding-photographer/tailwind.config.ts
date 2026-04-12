@@ -15,8 +15,8 @@ const config: Config = {
         'button-soft':      '#A89282',
       },
       fontFamily: {
-        sans:    ['Assistant', 'sans-serif'],
-        display: ['Assistant', 'sans-serif'],
+        sans:    ['Montserrat', 'sans-serif'],
+        display: ['Playfair Display', 'serif'],
       },
       letterSpacing: {
         wider: '0.08em',

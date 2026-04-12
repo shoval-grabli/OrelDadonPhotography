@@ -2,14 +2,15 @@ import Image from 'next/image'
 import AnimatedSection from '@/components/ui/AnimatedSection'
 import Button from '@/components/ui/Button'
 import Divider from '@/components/ui/Divider'
+import WaveDivider from '@/components/ui/WaveDivider'
 
 export default function FinalCTASection() {
   return (
-    <section className="relative py-28 md:py-40 overflow-hidden">
+    <section className="relative pt-40 pb-28 md:pt-52 md:pb-40 overflow-hidden">
       {/* Background */}
       <div className="absolute inset-0">
         <Image
-          src="https://images.unsplash.com/photo-1529636798458-92182e662485?w=1920&q=80&fit=crop"
+          src="/images/cta/cta.jpg"
           alt="זוג בשקיעה"
           fill
           className="object-cover"
@@ -18,6 +19,8 @@ export default function FinalCTASection() {
         <div className="absolute inset-0 bg-text-primary/50" />
         <div className="absolute inset-0 bg-gradient-to-b from-transparent via-text-primary/20 to-text-primary/60" />
       </div>
+
+      <WaveDivider fill="#EDE3D7" top />
 
       {/* Content */}
       <AnimatedSection className="relative z-10 max-w-2xl mx-auto px-6 text-center">

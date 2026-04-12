@@ -1,19 +1,17 @@
 import Link from 'next/link'
 import AnimatedSection from '@/components/ui/AnimatedSection'
-import SectionTitle from '@/components/ui/SectionTitle'
 import Carousel3D from '@/components/gallery/Carousel3D'
+import WaveDivider from '@/components/ui/WaveDivider'
 import { selectedWorks } from '@/data/gallery'
 
 export default function SelectedWorksSection() {
   return (
-    <section className="py-24 md:py-32 bg-bg-section">
+    <section className="relative pt-24 pb-36 md:pt-32 md:pb-48 bg-bg-section">
       <div className="max-w-7xl mx-auto px-6">
         <AnimatedSection className="mb-16 text-center">
-          <SectionTitle
-            label="פורטפוליו"
-            title="עבודות נבחרות"
-            subtitle="כל תמונה היא סיפור. כל זוג — עולם שלם."
-          />
+          <h2 className="font-display text-4xl md:text-5xl text-text-primary font-light">
+            כל תמונה היא סיפור
+          </h2>
         </AnimatedSection>
 
         {/* 3D Carousel */}
@@ -31,6 +29,7 @@ export default function SelectedWorksSection() {
           </Link>
         </AnimatedSection>
       </div>
+      <WaveDivider fill="#F7F3EE" />
     </section>
   )
 }

@@ -16,9 +16,9 @@ export default function Footer() {
         <div className="grid grid-cols-1 md:grid-cols-3 gap-12">
           {/* Brand */}
           <div className="flex flex-col gap-4">
-            <span className="font-display text-2xl text-text-primary">אוראל דדון</span>
+            <span className="font-display text-2xl text-text-primary">OREL DADON PHOTOGRAPHY</span>
             <p className="text-text-secondary font-sans font-light text-sm leading-relaxed">
-              צלמת חתונות פרימיום בתל אביב והסביבה.
+              צלם חתונות פרימיום בתל אביב והסביבה.
               <br />
               רגעים שנשארים לנצח.
             </p>
@@ -78,7 +78,7 @@ export default function Footer() {
             © 2025 אוראל דדון. כל הזכויות שמורות.
           </p>
           <p className="text-xs text-text-secondary font-light">
-            צלמת חתונות | תל אביב והסביבה
+            צלם חתונות | תל אביב והסביבה
           </p>
         </div>
       </div>

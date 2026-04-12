@@ -5,15 +5,15 @@ import Footer from '@/components/layout/Footer'
 
 export const metadata: Metadata = {
   title: {
-    default: 'אוראל דדון | צלמת חתונות',
+    default: 'אוראל דדון | צלם חתונות',
     template: '%s | אוראל דדון',
   },
-  description: 'צלמת חתונות פרימיום בתל אביב והסביבה. צילום דוקומנטרי, אמנותי ורגיש של הרגעים הכי חשובים בחיים.',
-  keywords: ['צלמת חתונות', 'צלם חתונות תל אביב', 'צילום חתונה', 'צלמת פרימיום'],
+  description: 'צלם חתונות פרימיום בתל אביב והסביבה. צילום דוקומנטרי, אמנותי ורגיש של הרגעים הכי חשובים בחיים.',
+  keywords: ['צלם חתונות', 'צלם חתונות תל אביב', 'צילום חתונה', 'צלם פרימיום'],
   openGraph: {
     locale: 'he_IL',
     type: 'website',
-    siteName: 'אוראל דדון | צלמת חתונות',
+    siteName: 'אוראל דדון | צלם חתונות',
   },
 }
 
@@ -33,8 +33,8 @@ export default function RootLayout({
             __html: JSON.stringify({
               '@context': 'https://schema.org',
               '@type': 'LocalBusiness',
-              name: 'אוראל דדון צלמת חתונות',
-              description: 'צלמת חתונות פרימיום בתל אביב והסביבה',
+              name: 'אוראל דדון צלם חתונות',
+              description: 'צלם חתונות פרימיום בתל אביב והסביבה',
               address: {
                 '@type': 'PostalAddress',
                 addressLocality: 'תל אביב',
