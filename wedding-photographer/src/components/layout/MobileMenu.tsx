@@ -75,7 +75,7 @@ export default function MobileMenu({ isOpen, onClose }: MobileMenuProps) {
             className="flex items-center gap-2 text-text-secondary hover:text-button-soft transition-colors text-sm"
           >
             <Instagram size={16} />
-            @shira.levy.photography
+            @orel.dadon.photography
           </a>
         </div>
       </div>
