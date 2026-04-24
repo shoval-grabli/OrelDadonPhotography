@@ -73,7 +73,7 @@ export default function Footer() {
             כל הזכויות שמורות לשובל גרבלי 2026
           </p>
           <p className="text-xs text-text-secondary font-light">
-            צלם חתונות | תל אביב והסביבה
+            צלם חתונות | מהצפון ועד המרכז
           </p>
         </div>
       </div>

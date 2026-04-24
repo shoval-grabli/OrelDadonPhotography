@@ -1,5 +1,4 @@
 import Image from 'next/image'
-import Link from 'next/link'
 import WaveDivider from '@/components/ui/WaveDivider'
 
 export default function HeroSection() {
@@ -28,7 +27,7 @@ export default function HeroSection() {
           className="hero-fade block text-xs tracking-[0.35em] uppercase font-sans text-white/65 mb-6"
           style={{ animationDelay: '0.2s' }}
         >
-          WEDDING PHOTOGRAPHY
+          MOMENT &nbsp;|&nbsp; LOVE &nbsp;|&nbsp; VIBE
         </span>
 
         {/* Decorative line */}
@@ -37,24 +36,6 @@ export default function HeroSection() {
           style={{ animationDelay: '0.45s' }}
         />
 
-        {/* CTA buttons */}
-        <div
-          className="hero-fade flex flex-col sm:flex-row items-center justify-center gap-4 mt-10"
-          style={{ animationDelay: '0.85s' }}
-        >
-          <Link
-            href="/contact"
-            className="inline-flex items-center justify-center font-sans font-medium text-sm tracking-wider px-9 py-3.5 bg-white/90 text-text-primary hover:bg-white transition-all duration-300 hover:-translate-y-px hover:shadow-[0_4px_14px_rgba(0,0,0,0.15)]"
-          >
-            לבדיקת זמינות
-          </Link>
-          <Link
-            href="/gallery"
-            className="inline-flex items-center justify-center font-sans font-medium text-sm tracking-wider px-9 py-3.5 border border-white/50 text-white hover:border-white hover:bg-white/10 transition-all duration-300 hover:-translate-y-px"
-          >
-            לגלריה
-          </Link>
-        </div>
       </div>
 
       {/* Scroll indicator */}

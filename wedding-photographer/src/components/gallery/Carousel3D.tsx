@@ -4,21 +4,24 @@ import { useState, useEffect, useRef, useCallback } from 'react'
 import Image from 'next/image'
 import { createPortal } from 'react-dom'
 import { ChevronLeft, ChevronRight } from 'lucide-react'
+import { useRouter } from 'next/navigation'
 import type { GalleryImage } from '@/types'
 import Lightbox from './Lightbox'
 
 const ROTATE_SPEED = 20 // degrees per second (full rotation = 18s)
 
-const RADIUS = {
-  mobile: 140,
-  tablet: 230,
-  desktop: 355,
-}
-
 const CARD = {
   mobile:  { w: 110, h: 151 },
   tablet:  { w: 150, h: 206 },
   desktop: { w: 195, h: 268 },
+}
+
+const GAP = { mobile: 24, tablet: 32, desktop: 40 }
+
+function computeRadius(bp: 'mobile' | 'tablet' | 'desktop', N: number): number {
+  const minRadius = (CARD[bp].w + GAP[bp]) * N / (2 * Math.PI)
+  const base = { mobile: 140, tablet: 230, desktop: 355 }[bp]
+  return Math.max(base, minRadius)
 }
 
 function getBreakpoint() {
@@ -28,7 +31,8 @@ function getBreakpoint() {
   return 'desktop'
 }
 
-export default function Carousel3D({ images }: { images: GalleryImage[] }) {
+export default function Carousel3D({ images, hrefs }: { images: GalleryImage[]; hrefs?: string[] }) {
+  const router = useRouter()
   const N = images.length
   const step = 360 / N
 
@@ -49,7 +53,7 @@ export default function Carousel3D({ images }: { images: GalleryImage[] }) {
   const dragDistRef     = useRef(0)
   const containerRef    = useRef<HTMLDivElement>(null)
 
-  const radius = RADIUS[bp]
+  const radius = computeRadius(bp, N)
   const card   = CARD[bp]
 
   // ── Init ───────────────────────────────────────────────
@@ -173,7 +177,11 @@ export default function Carousel3D({ images }: { images: GalleryImage[] }) {
                 }}
                 onClick={() => {
                   if (dragDistRef.current < 6 && isFront) {
-                    setLightboxIndex(i)
+                    if (hrefs?.[i]) {
+                      router.push(hrefs[i])
+                    } else {
+                      setLightboxIndex(i)
+                    }
                   }
                 }}
               >
@@ -182,9 +190,10 @@ export default function Carousel3D({ images }: { images: GalleryImage[] }) {
                   className="relative w-full h-full overflow-hidden"
                   style={{
                     borderRadius: 16,
+                    border: '1px solid rgba(221,210,199,0.45)',
                     boxShadow: isFront
-                      ? '0 32px 80px rgba(78,67,61,0.28), 0 8px 24px rgba(78,67,61,0.14)'
-                      : '0 8px 24px rgba(78,67,61,0.10)',
+                      ? '0 32px 80px rgba(78,67,61,0.28), 0 8px 24px rgba(78,67,61,0.18)'
+                      : '0 6px 20px rgba(78,67,61,0.12)',
                   }}
                 >
                   <Image
@@ -209,7 +218,7 @@ export default function Carousel3D({ images }: { images: GalleryImage[] }) {
                         {image.coupleNames}
                       </p>
                       <p className="text-white/70 font-sans text-xs">
-                        {image.location} · {image.year}
+                        {image.year}{image.location ? ` · ${image.location}` : ''}
                       </p>
                     </div>
                   )}

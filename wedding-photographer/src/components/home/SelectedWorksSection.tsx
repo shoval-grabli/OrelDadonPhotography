@@ -2,9 +2,13 @@ import Link from 'next/link'
 import AnimatedSection from '@/components/ui/AnimatedSection'
 import Carousel3D from '@/components/gallery/Carousel3D'
 import WaveDivider from '@/components/ui/WaveDivider'
-import { selectedWorks } from '@/data/gallery'
+import { getCouples, coupleToGalleryImage } from '@/lib/couples'
 
-export default function SelectedWorksSection() {
+export default async function SelectedWorksSection() {
+  const couples = await getCouples()
+  const images = couples.map(coupleToGalleryImage)
+  const hrefs = couples.map(c => `/gallery/couples/${c.slug}`)
+
   return (
     <section className="relative pt-12 pb-16 md:pt-16 md:pb-24 bg-bg-section">
       <div className="max-w-7xl mx-auto px-6">
@@ -14,9 +18,8 @@ export default function SelectedWorksSection() {
           </h2>
         </AnimatedSection>
 
-        {/* 3D Carousel */}
         <div className="overflow-visible">
-          <Carousel3D images={selectedWorks} />
+          <Carousel3D images={images} hrefs={hrefs} />
         </div>
 
         <AnimatedSection className="mt-10 text-center">

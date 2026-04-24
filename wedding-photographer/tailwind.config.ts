@@ -17,6 +17,7 @@ const config: Config = {
       fontFamily: {
         sans:    ['Heebo', 'sans-serif'],
         display: ['Cormorant Garamond', 'serif'],
+        gveret:  ['Gveret Levin AlefAlefAlef', 'serif'],
       },
       letterSpacing: {
         wider: '0.08em',

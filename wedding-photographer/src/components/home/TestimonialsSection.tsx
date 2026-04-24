@@ -84,7 +84,7 @@ export default function TestimonialsSection() {
                   </span>
 
                   {/* Quote text */}
-                  <p className="relative font-sans text-text-secondary font-light leading-relaxed text-sm flex-1 pt-3">
+                  <p className="relative font-sans text-text-secondary font-light leading-relaxed text-sm flex-1 pt-3 whitespace-pre-line">
                     {t.quote}
                   </p>
 
@@ -101,7 +101,7 @@ export default function TestimonialsSection() {
                         {t.names}
                       </p>
                       <p className="font-sans text-text-secondary text-xs mt-0.5">
-                        {t.year}{t.location ? ` · ${t.location}` : ''}
+                        {t.date}{t.venue ? ` · ${t.venue}` : ''}
                       </p>
                     </div>
                   </div>

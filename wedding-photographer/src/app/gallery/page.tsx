@@ -1,35 +1,35 @@
 import type { Metadata } from 'next'
-import AnimatedSection from '@/components/ui/AnimatedSection'
-import Carousel3D from '@/components/gallery/Carousel3D'
-import { galleryImages } from '@/data/gallery'
+import Image from 'next/image'
+import { listImages, CLD_BASE } from '@/lib/cloudinary'
 
 export const metadata: Metadata = {
   title: 'גלריה',
   description: 'גלריית צילומי חתונות — כל תמונה סיפור, כל זוג עולם.',
 }
 
-export default function GalleryPage() {
+export default async function GalleryPage() {
+  const images = await listImages(`${CLD_BASE}/Full Gallery`)
+
   return (
     <>
-      {/* Header */}
-      <section className="pt-32 pb-12 md:pt-44 md:pb-16 bg-bg-section">
-        <div className="max-w-4xl mx-auto px-6 text-center">
-          <AnimatedSection>
-            <span className="text-xs tracking-widest uppercase text-text-secondary font-sans">פורטפוליו</span>
-            <h1 className="font-display text-5xl md:text-6xl text-text-primary leading-tight font-light mt-4 mb-4">
-              הגלריה
-            </h1>
-            <p className="font-sans text-text-secondary font-light text-base leading-relaxed max-w-md mx-auto">
-              כל תמונה — סיפור. כל זוג — עולם.
-            </p>
-          </AnimatedSection>
-        </div>
-      </section>
-
-      {/* 3D Carousel */}
-      <section className="py-10 md:py-16 bg-bg-main overflow-hidden">
-        <div className="max-w-7xl mx-auto px-4">
-          <Carousel3D images={galleryImages} />
+      <section className="pt-32 md:pt-44 pb-12 md:pb-20 bg-bg-main">
+        <div className="max-w-7xl mx-auto px-4 md:px-8">
+          <div className="gallery-masonry">
+            {images.map((src, i) => (
+              <div key={src} className="gallery-masonry-item">
+                <Image
+                  src={src}
+                  alt={`תמונת חתונה ${i + 1}`}
+                  width={800}
+                  height={1200}
+                  className="w-full h-auto block"
+                  sizes="(max-width: 768px) 50vw, 33vw"
+                  loading={i < 12 ? 'eager' : 'lazy'}
+                  priority={i < 6}
+                />
+              </div>
+            ))}
+          </div>
         </div>
       </section>
     </>

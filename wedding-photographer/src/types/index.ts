@@ -28,8 +28,8 @@ export interface Testimonial {
   id: string
   quote: string
   names: string
-  year: number
-  location?: string
+  date: string
+  venue?: string
   initials: string
 }
 

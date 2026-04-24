@@ -6,37 +6,74 @@ export default function ProcessSection() {
   return (
     <section className="relative pt-24 pb-32 md:pt-32 md:pb-44 bg-bg-main">
       <div className="max-w-6xl mx-auto px-6">
+
         <AnimatedSection className="mb-16">
           <h2 className="font-display text-4xl md:text-5xl text-text-primary font-light">
             איך עובד התהליך
           </h2>
         </AnimatedSection>
 
-        {/* Steps */}
-        <div className="relative grid grid-cols-1 md:grid-cols-4 gap-8 md:gap-6">
-          {/* Single connector line behind all circles */}
-          <div className="hidden md:block absolute top-5 inset-x-0 h-px bg-border-soft" />
+        {/* Desktop: horizontal timeline — single row with connecting line */}
+        <div className="hidden lg:block relative">
+          {/* Line passes through the vertical center of the circles (top-5 = 20px = half of w-10/h-10) */}
+          <div className="absolute inset-x-0 top-5 h-px bg-border-soft" />
 
+          <div className="flex">
+            {processSteps.map((step, i) => (
+              <AnimatedSection
+                key={step.number}
+                delay={(Math.min(i * 100, 500)) as 0 | 100 | 200 | 300 | 400 | 500}
+                className="flex-1"
+              >
+                <div className="flex flex-col items-center text-center gap-4 px-2">
+                  {/* Circle sits on the line */}
+                  <div className="relative z-10 w-10 h-10 rounded-full bg-bg-main border border-border-soft flex items-center justify-center text-xs text-text-secondary font-sans shrink-0">
+                    {String(step.number).padStart(2, '0')}
+                  </div>
+
+                  <div className="flex flex-col gap-2">
+                    <h3 className="font-sans font-medium text-text-primary text-sm">
+                      {step.title}
+                    </h3>
+                    <p className="font-sans text-text-secondary font-light text-xs leading-relaxed">
+                      {step.description}
+                    </p>
+                  </div>
+                </div>
+              </AnimatedSection>
+            ))}
+          </div>
+        </div>
+
+        {/* Mobile: vertical timeline */}
+        <div className="lg:hidden flex flex-col">
           {processSteps.map((step, i) => (
-            <AnimatedSection
-              key={step.number}
-              delay={(i * 100) as 0 | 100 | 200 | 300}
-            >
-              <div className="relative flex flex-col items-center text-center md:items-start md:text-start gap-4">
-                {/* Number */}
-                <div className="relative z-10 w-10 h-10 rounded-full bg-bg-main border border-border-soft flex items-center justify-center text-xs text-text-secondary font-sans shrink-0">
+            <div key={step.number} className="flex gap-5 items-stretch">
+
+              {/* Circle + vertical connector */}
+              <div className="flex flex-col items-center shrink-0">
+                <div className="w-10 h-10 rounded-full bg-bg-main border border-border-soft flex items-center justify-center text-xs text-text-secondary font-sans shrink-0">
                   {String(step.number).padStart(2, '0')}
                 </div>
-
-                {/* Content */}
-                <div>
-                  <h3 className="font-sans font-medium text-text-primary text-base mb-2">{step.title}</h3>
-                  <p className="font-sans text-text-secondary font-light text-sm leading-relaxed">{step.description}</p>
-                </div>
+                {i < processSteps.length - 1 && (
+                  <div className="flex-1 w-px bg-border-soft mt-3" />
+                )}
               </div>
-            </AnimatedSection>
+
+              {/* Text */}
+              <div className="pb-10 pt-2 flex-1">
+                <h3 className="font-sans font-medium text-text-primary text-base mb-2">
+                  {step.title}
+                </h3>
+                <p className="font-sans text-text-secondary font-light text-sm leading-relaxed">
+                  {step.description}
+                </p>
+              </div>
+
+            </div>
           ))}
         </div>
+
       </div>
       <WaveDivider fill="#EDE3D7" />
     </section>

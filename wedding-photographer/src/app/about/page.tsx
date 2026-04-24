@@ -26,19 +26,7 @@ const philosophy = [
 export default function AboutPage() {
   return (
     <>
-      {/* Hero */}
-      <section className="relative pt-32 pb-20 md:pt-44 md:pb-28 bg-bg-section overflow-hidden">
-        <div className="max-w-6xl mx-auto px-6">
-          <AnimatedSection className="max-w-2xl">
-            <span className="text-xs tracking-widest uppercase text-text-secondary font-sans">אודותי</span>
-            <h1 className="font-display text-5xl md:text-6xl text-text-primary leading-tight font-light mt-4">
-              הסיפור שמאחורי
-              <br />
-              העדשה
-            </h1>
-          </AnimatedSection>
-        </div>
-      </section>
+
 
       {/* Story */}
       <section className="py-24 md:py-32 bg-bg-main">
