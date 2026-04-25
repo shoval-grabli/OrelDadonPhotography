@@ -3,6 +3,7 @@ import Link from 'next/link'
 import AnimatedSection from '@/components/ui/AnimatedSection'
 import Divider from '@/components/ui/Divider'
 import WaveDivider from '@/components/ui/WaveDivider'
+import { cldVideo } from '@/lib/cloudinary'
 
 const stats = [
   { number: '150+', label: 'חתונות מצולמות' },
@@ -12,6 +13,7 @@ const stats = [
 ]
 
 export default function ShortAboutSection() {
+  const videoUrl = cldVideo('video_zp58mj.mp4')
   return (
     <section className="relative pt-24 pb-32 md:pt-32 md:pb-44 bg-bg-main">
       <div className="max-w-6xl mx-auto px-6 flex flex-col gap-20 md:gap-28">
@@ -78,7 +80,7 @@ export default function ShortAboutSection() {
           {/* שמאל — סרטון */}
           <AnimatedSection delay={200} className="relative w-full max-w-xs mx-auto md:mx-0">
             <video
-              src="/video.mov"
+              src={videoUrl}
               autoPlay
               muted
               loop

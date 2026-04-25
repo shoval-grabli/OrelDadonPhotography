@@ -65,3 +65,19 @@ export async function listImages(folder: string): Promise<string[]> {
   const resources = await listResourcesByFolder(folder)
   return resources.map(r => r.url)
 }
+
+export async function getVideoUrl(folder: string): Promise<string> {
+  try {
+    const res = await cloudinary.search
+      .expression(`asset_folder="${folder}" AND resource_type:video`)
+      .max_results(1)
+      .execute()
+
+    const item = (res.resources as { public_id: string; format: string }[])[0]
+    if (!item) return ''
+    return cldVideo(`${item.public_id}.${item.format.toLowerCase()}`)
+  } catch (e) {
+    console.error('[cloudinary] getVideoUrl error for', folder, e)
+    return ''
+  }
+}
