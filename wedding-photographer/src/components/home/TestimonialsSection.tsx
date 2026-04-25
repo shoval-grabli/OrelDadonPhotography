@@ -69,7 +69,7 @@ export default function TestimonialsSection() {
                     'transition-all duration-300 ease-in-out',
                     isCenter
                       ? [
-                          'opacity-100 p-8',
+                          'opacity-100 p-5 md:p-8',
                           'border border-accent/30',
                           'shadow-[0_6px_28px_rgba(78,67,61,0.10)]',
                           'hover:scale-[1.015]',

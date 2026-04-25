@@ -23,13 +23,13 @@ export default function ShortAboutSection() {
 
           {/* ימין — תמונה של אוראל */}
           <AnimatedSection>
-            <div className="relative aspect-[3/4] max-w-sm mx-auto md:mx-0">
+            <div className="relative aspect-[3/4] max-w-[280px] sm:max-w-sm mx-auto md:mx-0">
               <Image
                 src="/images/about/portrait.jpg"
                 alt="אוראל דדון — צלם חתונות"
                 fill
                 className="object-cover"
-                sizes="(max-width: 768px) 100vw, 50vw"
+                sizes="(max-width: 768px) 80vw, 50vw"
               />
               <div className="absolute -bottom-4 -end-4 w-full h-full border border-border-soft -z-10" />
             </div>
@@ -68,7 +68,7 @@ export default function ShortAboutSection() {
         <div className="grid grid-cols-1 md:grid-cols-2 gap-12 md:gap-16 items-center">
 
           {/* ימין — סטטיסטיקות */}
-          <AnimatedSection className="grid grid-cols-2 gap-8">
+          <AnimatedSection className="grid grid-cols-2 gap-6 md:gap-8">
             {stats.map((stat) => (
               <div key={stat.label}>
                 <p className="font-display text-2xl md:text-3xl text-text-primary">{stat.number}</p>
@@ -78,7 +78,7 @@ export default function ShortAboutSection() {
           </AnimatedSection>
 
           {/* שמאל — סרטון */}
-          <AnimatedSection delay={200} className="relative w-full max-w-xs mx-auto md:mx-0">
+          <AnimatedSection delay={200} className="relative w-full max-w-[260px] sm:max-w-xs mx-auto md:mx-0">
             <video
               src={videoUrl}
               autoPlay

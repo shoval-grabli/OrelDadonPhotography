@@ -10,7 +10,7 @@ export default async function SelectedWorksSection() {
   const hrefs = couples.map(c => `/gallery/couples/${c.slug}`)
 
   return (
-    <section className="relative pt-12 pb-16 md:pt-16 md:pb-24 bg-bg-section">
+    <section className="relative pt-12 pb-16 md:pt-16 md:pb-24 bg-bg-section overflow-x-hidden">
       <div className="max-w-7xl mx-auto px-6">
         <AnimatedSection className="mb-10 text-center">
           <h2 className="font-display text-4xl md:text-5xl text-text-primary font-light">

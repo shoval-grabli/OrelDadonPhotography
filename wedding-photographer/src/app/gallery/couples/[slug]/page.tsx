@@ -27,7 +27,7 @@ export default async function CouplePage({ params }: { params: Promise<{ slug: s
             <span>→</span>
             חזרה לעמוד הראשי
           </Link>
-          <h1 className="font-display text-5xl md:text-6xl text-text-primary font-light leading-tight">
+          <h1 className="font-display text-4xl md:text-6xl text-text-primary font-light leading-tight">
             {names}
           </h1>
           <p className="font-sans text-text-secondary font-light text-sm mt-3 tracking-wide">
