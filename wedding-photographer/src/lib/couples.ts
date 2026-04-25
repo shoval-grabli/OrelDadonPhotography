@@ -13,7 +13,7 @@ export interface CoupleData {
   coverSrc: string
 }
 
-function parseFolderName(name: string): { names: string; year: string; venue: string } {
+export function parseFolderName(name: string): { names: string; year: string; venue: string } {
   const yearMatch = name.match(/(\d{4})/)
   if (!yearMatch) return { names: name.trim(), year: '', venue: '' }
   const year = yearMatch[1]
@@ -44,7 +44,7 @@ export async function getCouples(): Promise<CoupleData[]> {
 
       return {
         folderName,
-        slug: encodeURIComponent(folderName),
+        slug: folderName,
         names,
         year,
         venue,

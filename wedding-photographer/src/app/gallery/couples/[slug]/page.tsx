@@ -1,7 +1,7 @@
 import { notFound } from 'next/navigation'
 import Image from 'next/image'
 import Link from 'next/link'
-import { getCouples, getCoupleImages } from '@/lib/couples'
+import { getCouples, getCoupleImages, parseFolderName } from '@/lib/couples'
 
 export async function generateStaticParams() {
   const couples = await getCouples()
@@ -11,12 +11,10 @@ export async function generateStaticParams() {
 export default async function CouplePage({ params }: { params: Promise<{ slug: string }> }) {
   const { slug } = await params
   const folderName = decodeURIComponent(slug)
+  const { names, year, venue } = parseFolderName(folderName)
 
-  const couples = await getCouples()
-  const couple = couples.find(c => c.folderName === folderName)
-  if (!couple) notFound()
-
-  const images = await getCoupleImages(couple.folderName)
+  const images = await getCoupleImages(folderName)
+  if (images.length === 0) notFound()
 
   return (
     <>
@@ -30,10 +28,10 @@ export default async function CouplePage({ params }: { params: Promise<{ slug: s
             חזרה לעמוד הראשי
           </Link>
           <h1 className="font-display text-5xl md:text-6xl text-text-primary font-light leading-tight">
-            {couple.names}
+            {names}
           </h1>
           <p className="font-sans text-text-secondary font-light text-sm mt-3 tracking-wide">
-            {couple.year}{couple.venue ? ` · ${couple.venue}` : ''}
+            {year}{venue ? ` · ${venue}` : ''}
           </p>
         </div>
       </section>
@@ -45,7 +43,7 @@ export default async function CouplePage({ params }: { params: Promise<{ slug: s
               <div key={i} className="gallery-masonry-item">
                 <Image
                   src={src}
-                  alt={`${couple.names} - תמונה ${i + 1}`}
+                  alt={`${names} - תמונה ${i + 1}`}
                   width={800}
                   height={1200}
                   className="w-full h-auto"
